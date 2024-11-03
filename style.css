@@ -1,0 +1,121 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #1e3a8a;      /* Dark Indigo */
+  --secondary-color: #3b82f6;    /* Blue */
+  --background-color: #f3f4f6;   /* Light Gray */
+  --text-color: #1f2937;         /* Charcoal Gray */
+  --tooltip-bg: #2563eb;         /* Medium Blue */
+  --accent-color: #ef4444;       /* Red Accent */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle, #e0e7ff, #93c5fd);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#form-wrapper {
+  max-width: 750px;
+  background-color: var(--primary-color);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--background-color);
+}
+
+#form-wrapper:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+#tip-in-value {
+  background-color: var(--tooltip-bg);
+  display: inline-block;
+  width: 7ch;
+  color: var(--background-color);
+  text-align: center;
+  position: relative;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-left: 12px;
+  font-weight: 600;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#tip-in-value:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+#tip-in-value::after {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-top: 8px solid transparent;
+  border-right: 8px solid var(--tooltip-bg);
+  border-bottom: 8px solid transparent;
+  left: -8px;
+  top: 6px;
+}
+
+button {
+  background: linear-gradient(145deg, var(--secondary-color), var(--accent-color));
+  color: var(--background-color);
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Additional Styling for Inputs, if applicable */
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0px 4px 10px rgba(239, 68, 68, 0.2);
+  outline: none;
+}
